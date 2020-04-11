@@ -7,6 +7,10 @@ authors = ["Vincent Rialland <vincent.rialland@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.6"
 starlette = "^0.13.2"
+jinja2 = "^2.11.1"
+uvicorn = "^0.11.3"
+requests = "^2.23.0"
+aiofiles = "^0.4.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^4.6"
