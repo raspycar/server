@@ -1,8 +1,7 @@
+from raspycar.views import index, ws
 from starlette.applications import Starlette
 from starlette.routing import Mount, Route, WebSocketRoute
 from starlette.staticfiles import StaticFiles
-
-from raspycar.views import index, ws
 
 routes = (
     Route("/", index),
