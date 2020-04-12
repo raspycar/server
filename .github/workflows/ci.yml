@@ -2,7 +2,10 @@
 name: CI
 
 on:
-  - push
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   black:
@@ -23,10 +26,8 @@ jobs:
           black --check .
 
   test:
-    name: Run tests
-
+    name: Run pytest
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         python-version: [3.6, 3.7, 3.8]
@@ -47,4 +48,4 @@ jobs:
       - name: Pytest
         run: |
           poetry shell
-          py.test
+          pytest
