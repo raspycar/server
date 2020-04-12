@@ -1,4 +1,4 @@
-__version__ = '0.1.0'
+__version__ = "0.1.0"
 
 from starlette.applications import Starlette
 from starlette.routing import Mount, Route, WebSocketRoute
@@ -22,7 +22,7 @@ async def ws(websocket):
 routes = (
     Route("/", index),
     WebSocketRoute("/ws", ws),
-    Mount("/static", StaticFiles(directory="static"))
+    Mount("/static", StaticFiles(directory="static")),
 )
 
 
