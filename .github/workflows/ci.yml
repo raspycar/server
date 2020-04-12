@@ -63,6 +63,4 @@ jobs:
           poetry install
 
       - name: Pytest
-        run: |
-          poetry shell
-          pytest
+        run: poetry run pytest
