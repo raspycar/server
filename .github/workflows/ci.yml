@@ -5,6 +5,23 @@ on:
   - push
 
 jobs:
+  black:
+    name: Run Black
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Black
+        run: |
+          pip install black
+          black --check .
+
   test:
     name: Run tests
 
@@ -25,10 +42,7 @@ jobs:
       - name: Install Poetry and requirements
         run: |
           pip install poetry
-          poetry install --dev
-
-      - name: Black
-        run: black --check .
+          poetry install
 
       - name: Pytest
         run: py.test
