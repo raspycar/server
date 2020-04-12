@@ -8,6 +8,23 @@ on:
     branches: [ master ]
 
 jobs:
+  isort:
+    name: Run isort
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Isort
+        run: |
+          pip install isort
+          isort -c
+
   black:
     name: Run Black
     runs-on: ubuntu-latest
