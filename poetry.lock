@@ -91,6 +91,33 @@ version = "0.4.3"
 
 [[package]]
 category = "main"
+description = "Yet another Python color library."
+name = "colorzero"
+optional = false
+python-versions = "*"
+version = "1.1"
+
+[package.extras]
+doc = ["sphinx"]
+test = ["pytest", "coverage", "mock"]
+
+[[package]]
+category = "main"
+description = "A simple interface to GPIO devices with Raspberry Pi."
+name = "gpiozero"
+optional = false
+python-versions = "*"
+version = "1.5.1"
+
+[package.dependencies]
+colorzero = "*"
+
+[package.extras]
+doc = ["sphinx"]
+test = ["pytest", "coverage", "mock"]
+
+[[package]]
+category = "main"
 description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
 name = "h11"
 optional = false
@@ -390,7 +417,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "565fb1071bb11c2126e816524bc1434a855f5aa2bd61330c06606acf85155f40"
+content-hash = "24e2f58d235b2171ca05c82f6ab5a5dff964d2d0263474a16d2c314a85e87ae0"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -429,6 +456,14 @@ click = [
 colorama = [
     {file = "colorama-0.4.3-py2.py3-none-any.whl", hash = "sha256:7d73d2a99753107a36ac6b455ee49046802e59d9d076ef8e47b61499fa29afff"},
     {file = "colorama-0.4.3.tar.gz", hash = "sha256:e96da0d330793e2cb9485e9ddfd918d456036c7149416295932478192f4436a1"},
+]
+colorzero = [
+    {file = "colorzero-1.1-py2.py3-none-any.whl", hash = "sha256:e3c36d15b293de2b2f77ff54a5bd243fffac941ed0a5332d0697a6612a26a0a3"},
+    {file = "colorzero-1.1.tar.gz", hash = "sha256:acba47119b5d8555680d3cda9afe6ccc5481385ccc3c00084dd973f7aa184599"},
+]
+gpiozero = [
+    {file = "gpiozero-1.5.1-py2.py3-none-any.whl", hash = "sha256:101044038e71cec8be2fa841d4cea9e50e7962e9fb0287f465298b59e3f06594"},
+    {file = "gpiozero-1.5.1.tar.gz", hash = "sha256:ae1a8dc4e6e793ffd8f900968f3290d218052c46347fa0c0503c65fabe422e4d"},
 ]
 h11 = [
     {file = "h11-0.9.0-py2.py3-none-any.whl", hash = "sha256:4bc6d6a1238b7615b266ada57e0618568066f57dd6fa967d1290ec9309b2f2f1"},
