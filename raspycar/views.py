@@ -1,7 +1,10 @@
+import logging
+
 from starlette.templating import Jinja2Templates
 
-from . import settings
+from . import controls, settings
 
+logger = logging.getLogger(__file__)
 templates = Jinja2Templates(directory="templates")
 
 
@@ -13,5 +16,11 @@ def index(request):
 
 async def ws(websocket):
     await websocket.accept()
-    await websocket.send_text("Hello")
+    while True:
+        text = await websocket.receive_text()
+        logger.info("Received ", *text)
+        callback = getattr(controls, text[0], None)
+        if callback is not None:
+            callback()
     await websocket.close()
+    controls.stop()

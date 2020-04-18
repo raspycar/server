@@ -2,7 +2,8 @@ from starlette.applications import Starlette
 from starlette.routing import Mount, Route, WebSocketRoute
 from starlette.staticfiles import StaticFiles
 
-from raspycar.views import index, ws
+from . import controls
+from .views import index, ws
 
 routes = (
     Route("/", index),
@@ -11,4 +12,8 @@ routes = (
 )
 
 
-app = Starlette(debug=True, routes=routes)
+async def stop_car():
+    controls.stop()
+
+
+app = Starlette(debug=True, routes=routes, on_shutdown=[stop_car])
