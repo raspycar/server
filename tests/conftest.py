@@ -1,6 +1,7 @@
 import pytest
-from raspycar.app import app
 from starlette.testclient import TestClient
+
+from raspycar.app import app
 
 
 @pytest.fixture
