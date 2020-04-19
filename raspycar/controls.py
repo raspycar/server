@@ -10,6 +10,13 @@ class Pins(Enum):
     REVERSE_RIGHT = 10
 
 
+class Speed(Enum):
+    NONE = 0.
+    LOW = 0.2
+    HIGH = 0.8
+    FULL = 1.0
+
+
 pwm_forward_left = PWMOutputDevice(Pins.FORWARD_LEFT.value, True, 0, 1000)
 pwm_reverse_left = PWMOutputDevice(Pins.REVERSE_LEFT.value, True, 0, 1000)
 
@@ -18,38 +25,43 @@ pwm_reverse_right = PWMOutputDevice(Pins.REVERSE_RIGHT.value, True, 0, 1000)
 
 
 def stop():
-    pwm_forward_left.value = 0
-    pwm_reverse_left.value = 0
-    pwm_forward_right.value = 0
-    pwm_reverse_right.value = 0
+    """Stop all motion"""
+    pwm_forward_left.value = Speed.NONE.value
+    pwm_reverse_left.value = Speed.NONE.value
+    pwm_forward_right.value = Speed.NONE.value
+    pwm_reverse_right.value = Speed.NONE.value
 
 
 def forward():
-    pwm_forward_left.value = 1
-    pwm_reverse_left.value = 0
-    pwm_forward_right.value = 1
-    pwm_reverse_right.value = 0
+    """Go forwards"""
+    pwm_forward_left.value = Speed.FULL.value
+    pwm_reverse_left.value = Speed.NONE.value
+    pwm_forward_right.value = Speed.FULL.value
+    pwm_reverse_right.value = Speed.NONE.value
 
 
 def reverse():
-    pwm_forward_left.value = 0
-    pwm_reverse_left.value = 1
-    pwm_forward_right.value = 0
-    pwm_reverse_right.value = 1
+    """Go backwards"""
+    pwm_forward_left.value = Speed.NONE.value
+    pwm_reverse_left.value = Speed.FULL.value
+    pwm_forward_right.value = Speed.NONE.value
+    pwm_reverse_right.value = Speed.FULL.value
 
 
 def left():
-    pwm_forward_left.value = 0
-    pwm_reverse_left.value = 0
-    pwm_forward_right.value = 1
-    pwm_reverse_right.value = 0
+    """Spin the car left"""
+    pwm_forward_left.value = Speed.NONE.value
+    pwm_reverse_left.value = Speed.FULL.value
+    pwm_forward_right.value = Speed.FULL.value
+    pwm_reverse_right.value = Speed.NONE.value
 
 
 def right():
-    pwm_forward_left.value = 1
-    pwm_reverse_left.value = 0
-    pwm_forward_right.value = 0
-    pwm_reverse_right.value = 0
+    """Spin the car right"""
+    pwm_forward_left.value = Speed.FULL.value
+    pwm_reverse_left.value = Speed.NONE.value
+    pwm_forward_right.value = Speed.NONE.value
+    pwm_reverse_right.value = Speed.FULL.value
 
 
 # TODO: https://www.bluetin.io/python/gpio-pwm-raspberry-pi-h-bridge-dc-motor-control/
