@@ -1,0 +1,7 @@
+.fa-rotate-45 {
+  transform: rotate(45deg);
+}
+
+.fa-rotate--45 {
+  transform: rotate(-45deg);
+}

@@ -19,8 +19,10 @@ async def ws(websocket):
     while True:
         text = await websocket.receive_text()
         logger.info('Received control "%s"', text)
-        callback = getattr(controls, text[0], None)
+        callback = getattr(controls, text, None)
         if callback is not None:
             callback()
+        else:
+            logger.error("Control not found!")
     await websocket.close()
     controls.stop()
