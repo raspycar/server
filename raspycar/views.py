@@ -18,7 +18,7 @@ async def ws(websocket):
     await websocket.accept()
     while True:
         text = await websocket.receive_text()
-        logger.info("Received ", text)
+        logger.info('Received control "%s"', text)
         callback = getattr(controls, text[0], None)
         if callback is not None:
             callback()
