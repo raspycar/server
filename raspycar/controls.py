@@ -64,4 +64,36 @@ def right():
     pwm_reverse_right.value = Speed.FULL.value
 
 
+def forward_left():
+    """Turn left while driving forwards"""
+    pwm_forward_left.value = Speed.LOW.value
+    pwm_reverse_left.value = Speed.NONE.value
+    pwm_forward_right.value = Speed.HIGH.value
+    pwm_reverse_right.value = Speed.NONE.value
+
+
+def forward_right():
+    """Turn right while driving forwards"""
+    pwm_forward_left.value = Speed.HIGH.value
+    pwm_reverse_left.value = Speed.NONE.value
+    pwm_forward_right.value = Speed.LOW.value
+    pwm_reverse_right.value = Speed.NONE.value
+
+
+def reverse_left():
+    """Turn left while driving backwards"""
+    pwm_forward_left.value = Speed.NONE.value
+    pwm_reverse_left.value = Speed.LOW.value
+    pwm_forward_right.value = Speed.NONE.value
+    pwm_reverse_right.value = Speed.HIGH.value
+
+
+def reverse_right():
+    """Turn right while driving backwards"""
+    pwm_forward_left.value = Speed.NONE.value
+    pwm_reverse_left.value = Speed.HIGH.value
+    pwm_forward_right.value = Speed.NONE.value
+    pwm_reverse_right.value = Speed.LOW.value
+
+
 # TODO: https://www.bluetin.io/python/gpio-pwm-raspberry-pi-h-bridge-dc-motor-control/
