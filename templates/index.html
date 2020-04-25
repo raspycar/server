@@ -5,7 +5,6 @@
   <title>Raspycar</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/static/raspycar.css">
   <script src="/static/raspycar.js"></script>
 </head>
 <body>
@@ -14,19 +13,9 @@
       <div class="col-6 text-center">
         <div class="row">
           {# Forwards actions #}
-          <div class="col-4">
-            <button class="btn" data-control="forward_left">
-              <i class="fa fa-5x fa-arrow-up fa-rotate--45"></i>
-            </button>
-          </div>
-          <div class="col-4">
+          <div class="col-12">
             <button class="btn" data-control="forward">
               <i class="fa fa-5x fa-arrow-up"></i>
-            </button>
-          </div>
-          <div class="col-4">
-            <button class="btn" data-control="forward_right">
-              <i class="fa fa-5x fa-arrow-up fa-rotate-45"></i>
             </button>
           </div>
         </div>
@@ -50,19 +39,9 @@
         </div>
         <div class="row">
           {# Backwards actions #}
-          <div class="col-4">
-            <button class="btn" data-control="reverse_left">
-              <i class="fa fa-5x fa-arrow-down fa-rotate-45"></i>
-            </button>
-          </div>
-          <div class="col-4">
+          <div class="col-12">
             <button class="btn" data-control="reverse">
               <i class="fa fa-5x fa-arrow-down"></i>
-            </button>
-          </div>
-          <div class="col-4">
-            <button class="btn" data-control="reverse_right">
-              <i class="fa fa-5x fa-arrow-down fa-rotate--45"></i>
             </button>
           </div>
         </div>
