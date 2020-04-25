@@ -51,7 +51,7 @@ try:
     def left():
         """Spin the car left"""
         pwm_forward_left.value = Speed.NONE.value
-        pwm_reverse_left.value = Speed.FULL.value
+        pwm_reverse_left.value = Speed.NONE.value
         pwm_forward_right.value = Speed.FULL.value
         pwm_reverse_right.value = Speed.NONE.value
 
@@ -60,11 +60,11 @@ try:
         pwm_forward_left.value = Speed.FULL.value
         pwm_reverse_left.value = Speed.NONE.value
         pwm_forward_right.value = Speed.NONE.value
-        pwm_reverse_right.value = Speed.FULL.value
+        pwm_reverse_right.value = Speed.NONE.value
 
     def forward_left():
         """Turn left while driving forwards"""
-        pwm_forward_left.value = Speed.LOW.value
+        pwm_forward_left.value = Speed.NONE.value
         pwm_reverse_left.value = Speed.NONE.value
         pwm_forward_right.value = Speed.HIGH.value
         pwm_reverse_right.value = Speed.NONE.value
@@ -73,13 +73,13 @@ try:
         """Turn right while driving forwards"""
         pwm_forward_left.value = Speed.HIGH.value
         pwm_reverse_left.value = Speed.NONE.value
-        pwm_forward_right.value = Speed.LOW.value
+        pwm_forward_right.value = Speed.NONE.value
         pwm_reverse_right.value = Speed.NONE.value
 
     def reverse_left():
         """Turn left while driving backwards"""
         pwm_forward_left.value = Speed.NONE.value
-        pwm_reverse_left.value = Speed.LOW.value
+        pwm_reverse_left.value = Speed.NONE.value
         pwm_forward_right.value = Speed.NONE.value
         pwm_reverse_right.value = Speed.HIGH.value
 
@@ -88,7 +88,7 @@ try:
         pwm_forward_left.value = Speed.NONE.value
         pwm_reverse_left.value = Speed.HIGH.value
         pwm_forward_right.value = Speed.NONE.value
-        pwm_reverse_right.value = Speed.LOW.value
+        pwm_reverse_right.value = Speed.NONE.value
 
 
 except exc.BadPinFactory:

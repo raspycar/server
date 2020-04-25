@@ -35,6 +35,7 @@ class ControlWebsocketEndpoint(WebSocketEndpoint):
         await websocket.accept()
 
     async def on_disconnect(self, websocket, close_code):
+        logger.info("Connection lost, stopping car...")
         await emergency_stop()
         await websocket.close()
 
