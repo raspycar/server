@@ -18,6 +18,8 @@ gpiozero = "^1.5.1"
 pytest = "^4.6"
 black = "^19.10b0"
 isort = "^4.3.21"
+pyquery = "^1.4.1"
+pytest-mock = "^3.1.0"
 
 [build-system]
 requires = ["poetry>=0.12"]
